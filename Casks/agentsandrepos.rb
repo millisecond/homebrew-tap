@@ -7,7 +7,7 @@
 # Lives in the tap's Casks/ directory. Built by packaging/make-app.sh.
 cask "agentsandrepos" do
   version "0.1.0"
-  sha256 "2b9457b5ace892ed62644229b9839409ff4a7debe6a0365d23fa81df39fd8ed4"
+  sha256 "REPLACE_WITH_SHA256_FROM_MAKE_APP"
 
   url "https://github.com/millisecond/agentsandrepos/releases/download/v#{version}/agentsandrepos-#{version}.zip"
   name "Agents & Repos"
@@ -18,6 +18,13 @@ cask "agentsandrepos" do
 
   app "Agents & Repos.app"
   binary "#{appdir}/Agents & Repos.app/Contents/MacOS/agentsandrepos"
+
+  # Menubar app: launch right after install so it appears without an extra
+  # step. (Would need removing if this ever moves to homebrew/cask — official
+  # casks don't auto-launch.)
+  postflight do
+    system_command "/usr/bin/open", args: ["#{appdir}/Agents & Repos.app"]
+  end
 
   zap trash: [
     "~/.config/agentsandrepos",
