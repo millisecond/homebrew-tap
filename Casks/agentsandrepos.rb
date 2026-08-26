@@ -7,7 +7,7 @@
 # Lives in the tap's Casks/ directory. Built by packaging/make-app.sh.
 cask "agentsandrepos" do
   version "0.1.0"
-  sha256 "REPLACE_WITH_SHA256_FROM_MAKE_APP"
+  sha256 "2b9457b5ace892ed62644229b9839409ff4a7debe6a0365d23fa81df39fd8ed4"
 
   url "https://github.com/millisecond/agentsandrepos/releases/download/v#{version}/agentsandrepos-#{version}.zip"
   name "Agents & Repos"
