@@ -6,8 +6,8 @@
 # opens the app and flips "Start at login" in Settings (SMAppService).
 # Lives in the tap's Casks/ directory. Built by packaging/make-app.sh.
 cask "agentsandrepos" do
-  version "0.3.1"
-  sha256 "f6575167e03b3c1c62a944da14efd884e2181217744a7e80050900e8efafee09"
+  version "0.3.2"
+  sha256 "4610af5d804966d9c739d9e742614fb483b6ac41399e0809621e753d5e0c1baa"
 
   url "https://github.com/millisecond/agentsandrepos/releases/download/v#{version}/agentsandrepos-#{version}.zip"
   name "Agents & Repos"
@@ -22,8 +22,8 @@ cask "agentsandrepos" do
   # Menubar app: launch right after install so it appears without an extra
   # step. (Would need removing if this ever moves to homebrew/cask — official
   # casks don't auto-launch.)
-  postflight do
-    system_command "/usr/bin/open", args: ["#{appdir}/Agents & Repos.app"]
+  postflight_steps do
+    run "/usr/bin/open", args: ["{{appdir}}/Agents & Repos.app"]
   end
 
   zap trash: [
