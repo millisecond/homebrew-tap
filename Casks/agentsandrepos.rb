@@ -6,8 +6,8 @@
 # opens the app and flips "Start at login" in Settings (SMAppService).
 # Lives in the tap's Casks/ directory. Built by packaging/make-app.sh.
 cask "agentsandrepos" do
-  version "0.3.3"
-  sha256 "02f30fb4cbcecebd55d8a130de4f5773b640db33399368484277a28afad06c40"
+  version "0.3.4"
+  sha256 "0bcb693de1b547c0ac725f1b700a62e48d56920d0e64a7b81828c7c25261ef2e"
 
   url "https://github.com/millisecond/agentsandrepos/releases/download/v#{version}/agentsandrepos-#{version}.zip"
   name "Agents & Repos"
